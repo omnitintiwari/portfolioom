@@ -55,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={archivoBlack.className}>
+    <html lang="en" suppressHydrationWarning>
       <head>
         {process.env.UMAMI_DOMAIN && process.env.UMAMI_SITE_ID && (
           <Script
@@ -65,7 +65,7 @@ export default function RootLayout({
           />
         )}
       </head>
-      <body>
+      <body className={archivoBlack.className}>
         <Providers attribute="class" defaultTheme="dark" disableTransitionOnChange>
           <Particles className="fixed inset-0 -z-10 animate-fade-in" quantity={100} />
           <Preloader>
